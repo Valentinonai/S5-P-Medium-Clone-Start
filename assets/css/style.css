@@ -278,6 +278,7 @@ body {
   font-size: 10px;
   padding-inline: 15px;
   color: #191919aa;
+  cursor: pointer;
 }
 .storyFooter img:first-of-type {
   margin-right: auto;
