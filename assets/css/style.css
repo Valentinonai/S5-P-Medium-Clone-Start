@@ -15,7 +15,6 @@ body {
 }
 /* Navbar */
 #navBar {
-  background-color: #ffc017;
   font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: space-between;
@@ -28,6 +27,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  transition: all 0.5s linear;
 }
 #logo {
   margin-right: auto;
@@ -48,52 +48,21 @@ body {
   border: none;
   color: white;
   cursor: pointer;
+  transition: background-color 0.5s linear;
 }
 .colore {
-  animation: Bar 0.5s linear forwards;
+  background-color: #ffc017;
 }
-.navCambiacolore {
-  animation: animBar 0.5s linear forwards;
-}
-@keyframes Bar {
-  0% {
-    background-color: white;
-  }
-  100% {
-    background-color: #ffc017;
-  }
-}
-@keyframes animBar {
-  0% {
-    background-color: #ffc017;
-  }
-  100% {
-    background-color: white;
-  }
-}
-.buttonchange {
-  animation: animButton 0.5s linear forwards;
+.coloraNav {
+  background-color: white;
 }
 .buttonBase {
-  animation: Button 0.5s linear forwards;
+  background-color: #191919;
+}
+.coloraButton {
+  background-color: #1a8917;
 }
 
-@keyframes Button {
-  0% {
-    background-color: #1a8917;
-  }
-  100% {
-    background-color: #191919;
-  }
-}
-@keyframes animButton {
-  0% {
-    background-color: #191919;
-  }
-  100% {
-    background-color: #1a8917;
-  }
-}
 /* Header */
 #header {
   background-color: #ffc017;
