@@ -122,7 +122,8 @@ body {
 }
 .article {
   display: flex;
-
+  padding-bottom: 10px;
+  margin-top: 20px;
   width: 33%;
   height: 121px;
 }
@@ -229,6 +230,7 @@ body {
 .storyContainer {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   font-family: "Roboto", sans-serif;
   color: #191919;
   margin-block: 50px;
@@ -248,8 +250,8 @@ body {
   font-family: "Spectral", serif;
 }
 .story {
-  width: 50%;
   margin-right: auto;
+  width: 60%;
 }
 .story h2 {
   font-size: 18px;
@@ -284,12 +286,20 @@ body {
   margin-right: auto;
   margin-left: 5px;
 }
+.storyFooter img:nth-of-type(2) {
+  margin-inline-start: 5px;
+  cursor: pointer;
+}
 .storyImg {
   width: 200px;
   height: 134px;
   margin-right: 60px;
 }
-
+@media screen and ((max-width: 1000px) and (min-width:801px)) {
+  #header h1 {
+    font-size: 5em;
+  }
+}
 /* Versione tablet */
 @media screen and (max-width: 800px) {
   #header svg {
@@ -299,7 +309,7 @@ body {
     padding-inline: 30px;
   }
   #header h1 {
-    font-size: 60px;
+    font-size: 5em;
   }
   #header h3 {
     font-size: 20px;
@@ -319,7 +329,7 @@ body {
     padding: 40px;
   }
   #trendingArticle {
-    row-gap: 40px;
+    row-gap: 20px;
   }
   #buttonContainer {
     width: 100%;
@@ -330,6 +340,7 @@ body {
   }
   #trendingArticle {
     padding: 20px;
+    justify-content: flex-start;
   }
   #buttonContainer button {
     margin-inline: 8px;
@@ -359,12 +370,23 @@ body {
   .story {
     margin-right: auto;
   }
+  #header svg {
+    display: none;
+  }
 }
 @media screen and ((min-width: 481px) and (max-width: 650px)) {
   #menuNav ul li:first-of-type,
   #menuNav ul li:nth-of-type(2),
   #menuNav ul li:nth-of-type(3) {
     display: none;
+  }
+}
+@media screen and ((max-width: 620px) and (min-width:481px)) {
+  #header h1 {
+    font-size: 4.5em;
+  }
+  #header {
+    padding-inline: 30px;
   }
 }
 /* Versione mobile */
@@ -404,6 +426,7 @@ body {
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
+    row-gap: 0px;
   }
   .article {
     width: 100%;
@@ -455,5 +478,21 @@ body {
   }
   .storyImg {
     display: none;
+  }
+  #trendingArticle {
+    row-gap: 20px;
+  }
+  #stories {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+  .storyContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .story {
+    margin: auto;
   }
 }

@@ -12,23 +12,31 @@ const modifica = () => {
 window.addEventListener("scroll", modifica);
 
 const svg = document.querySelectorAll("g[opacity='1']");
-console.log(svg);
+let timer2;
 const hidden = [];
 let x;
-let time = setInterval(() => {
-  clearInterval(time);
+for (let i = 0; i < 150; i++) {
   x = Math.floor(Math.random() * 817);
-  svg[x].style.opacity = 0;
   hidden.push(x);
-  if (hidden.length === 20) {
-    time = setInterval(() => {
-      clearInterval(time);
-
-      svg[x].style.opacity = 1;
-      x++;
-      if (hidden.length > x) return;
-    }, 100);
-  }
-  console.log(svg[x]);
-}, 100);
-x = 0;
+}
+const animazione = () => {
+  let cont = 0;
+  let timer = setInterval(() => {
+    clearInterval(timer2);
+    svg[hidden[cont]].style.opacity = 0;
+    cont++;
+    if (cont === 150) {
+      clearInterval(timer);
+      cont = 0;
+      timer2 = setInterval(() => {
+        svg[hidden[cont]].style.opacity = 1;
+        cont++;
+        if (cont === hidden.length) {
+          clearInterval(timer);
+          animazione();
+        }
+      }, 50);
+    }
+  }, 50);
+};
+animazione();
